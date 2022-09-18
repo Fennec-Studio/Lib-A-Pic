@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Images;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
+    Route::get('/images', Images::class);
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
